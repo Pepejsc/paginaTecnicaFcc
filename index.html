@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Technical Documentation NodeJS</title>
+</head>
+
+<body>
+    <div id="general-div">
+        <div id="nav-div">
+            <nav id="navbar">
+                <header>
+                    <h1>NodeJS Documentation</h1>
+                </header>
+                <ul id="ul-menu">
+                    <li><a class="nav-link" href="#Sobre la documentación">Sobre la documentación</a></li>
+                    <li>
+                        <a class="nav-link" href="#v18API">v18.17.1 API LTS</a>
+                    </li>
+                    <li><a class="nav-link" href="#v20API">v20.5.1 API</a></li>
+                    <li>
+                        <a class="nav-link" href="#ES6">ES6 y más allá</a>
+                    </li>
+                    <li><a class="nav-link" href="#Guías">Guías</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="main">
+            <main id="main-doc">
+                <section class="main-section" id="Sobre_la_documentación">
+                    <header>Sobre la documentación</header>
+                    <a name="Documentation"></a>
+                    <h1>Sobre la Documentación</h1>
+                    <p>Existen diferentes tipos de documentación disponible en esta web:</p>
+                    <ul>
+                        <li>Documentación de Referencia de la API</li>
+                        <li>Características de ES6</li>
+                        <li>Guías</li>
+                    </ul>
+                    <h2>Documentación de Referencia de la API</h2>
+                    <p>
+                        La Documentación de Referencia de la API proporciona información detallada sobre una función
+                        u objeto en Node.js.
+                        Esta documentación indica qué argumentos acepta un método, el valor de retorno de ese método
+                        y que errores pueden estar relacionados con ese método.
+                        También indica qué métodos están disponibles para diferentes versiones de Node.js.
+                        Esta documentación describe los módulos integrados proporcionados por Node.js. No documenta
+                        los módulos proporcionados por la comunidad.
+                    </p>
+                    <h2>Características de ES6</h2>
+                    <p>
+                        La sección ES6 describe los tres grupos de funciones de ES6 y detalla qué funciones están
+                        habilitadas de forma predeterminada en Node.js,
+                        junto con enlaces explicativos. También muestra cómo encontrar qué versión de V8 se envió
+                        con una versión particular de Node.js.
+                    </p>
+                    <h2>Guías</h2>
+                    <p>
+                        La sección Guías tiene artículos extensos y detallados sobre las características y
+                        capacidades técnicas de Node.js.
+                    </p>
+                </section>
+                <section class="main-section" id="v18API">
+                    <header>v18API</header>
+                    <a name="v18API"></a>
+                        <h1>Node.js v18.17.1 Documentación</h1>
+                        <a>■ Other versions | ■ Options</a>
+                        <ul>
+                            <li>About this documentation</li>
+                            <li>Usage and example</li>
+                            <hr>
+                            <li>Assertion testing</li>
+                            <li>C++ addons</li>
+                            <li>Command-line options</li>
+                            <li>Debugger</li>
+                            <li>Domain</li>
+                            <li>Globals</li>
+                            <li>Inspector</li>
+                            <li>Modules: node:module API</li>
+                            <li>Path</li>
+                            <li>Punycode</li>
+                        </ul>
+                </section>
+                <section class="main-section" id="v20API">
+                    <header>v20API</header>
+                    <a name="v20API"></a>
+                        <h1>Node.js v20.5.1 Documentación</h1>
+                        <a>■ Other versions | ■ Options</a>
+                        <ul>
+                            <li>About this documentation</li>
+                            <li>Usage and example</li>
+                            <hr>
+                            <li>Zlib</li>
+                            <li>WASI</li>
+                            <li>URL</li>
+                            <li>TLS/SSL</li>
+                            <li>Stream</li>
+                            <li>Readline</li>
+                            <li>Permissions</li>
+                            <li>Net</li>
+                            <li>Modules: CommonJS modules</li>
+                            <li>HTTP/2</li>
+                        </ul>
+                </section>
+                <section class="main-section" id="ES6">
+                    <header>ES6</header>
+                    <a name="ES6"></a>
+                        <h1>ECMAScript 2015 (ES6) y más allá</h1>
+                        <p>
+                            Node.js está construido en base a versiones modernas de V8. Al mantenernos actualizados con
+                            las últimas versiones de
+                            este motor, aseguramos nuevas características del La Especificación ECMA-262 de JavaScript
+                            que proporciona a los
+                            desarrolladores de Node.js, así como mejoras continuas en el rendimiento y la estabilidad.
+                            <br><br>
+                            Todas las características de ECMAScript 2015 (ES6) se dividen en tres grupos shipping,
+                            staged y in progress:
+                        </p>
+                        <ul>
+                            <li>Todas las funcionalidades en shipping, que V8 considera estable, se activan de forma
+                                predeterminada en Node.js y hacen que NO se requiera ninguna bandera o flag en tiempo de
+                                ejecución.</li>
+                            <li>Las funciones en staged, que son características casi completas que el equipo V8 no las
+                                considera estables, requieren un bandera o flag en tiempo de ejecución:
+                                <b>--harmony</b>.</li>
+                            <li>In progress, las características pueden ser activadas individualmente por su respectiva
+                                bandera o flag, aunque esto es altamente desaconsejado a menos que sea para propósitos
+                                de pruebas. Nota: estos indicadores están expuestos por V8 y potencialmente cambiarán
+                                sin previo aviso de desaprobación.</li>
+                        </ul>
+                        <h2>¿Cuales de las características se incluyen con cada versión de Node.js por defecto?</h2>
+                        <p>
+                            El sitio web node.green proporciona una excelente visión general sobre las funciones compatibles de ECMAScript en varias
+                            versiones de Node.js, basadas en la tabla de compatibilidad de kangax.
+                        </p>
+                        <h2>¿Cuales de las características están en progreso?</h2>
+                        <p>
+                            Las nuevas características se agregan constantemente al motor V8. En términos generales, espere que lleguen en su futuro
+                            lanzamiento en Node.js, aunque se desconoce el momento.
+                            
+                            Puede detallar todas las funciones in progress disponibles en cada versión de Node.js mediante el argumento
+                            --v8-options. Tenga en cuenta que estas son características incompletas y posiblemente rotas de V8, así que úselas bajo
+                            su propio riesgo:
+                            
+                            node --v8-options | grep "in progress"
+                        </p>
+                        <h2>Tengo mi infraestructura configurada para aprovechar la bandera --harmony. ¿Debo eliminarlo?</h2>
+                        <p>
+                            El comportamiento actual del indicador --harmony en Node.js es habilitar solo las funcionalidades en staged. Después de
+                            todo, ahora es sinónimo de --es_staging. Como se mencionó anteriormente, estas son características completas que aún no
+                            se han considerado estables. Si desea jugar de forma segura, especialmente en entornos de producción, considere eliminar
+                            este indicador de tiempo de ejecución hasta que se envíe de forma predeterminada en V8 y, en consecuencia, en Node.js.
+                            Si mantiene esto habilitado, debe estar preparado para futuras actualizaciones de Node.js que puedan romper su código si
+                            V8 cambia su semántica para seguir más de cerca el estándar.
+                        </p>
+                        <h2>¿Cómo encuentro qué versión de V8 se envía con una versión de Node.js en particular?</h2>
+                        <p>
+                            Node.js proporciona una manera simple de enumerar todas las dependencias y versiones que se envían con un binario
+                            específico a través del objeto global process. En el caso del motor V8, escriba lo siguiente en su terminal para
+                            recuperar su versión:
+                            
+                            node -p process.versions.v8
+                        </p>
+                </section>
+                <section class="main-section" id="Guías">
+                    <header>Guías</header>
+                    <a name="Guía"></a>
+                    <h1>Guías</h1>
+                    <h1>General</h1>
+                    <ul>
+                        <li>Getting Started Guide</li>
+                        <li>Debugging - Getting Started</li>
+                        <li>Easy profiling for Node.js Applications</li>
+                        <li>Diagnostics - Flame Graphs</li>
+                        <li>Dockerizing a Node.js web app</li>
+                        <li>Migrating to safe Buffer constructors</li>
+                        <li>Diagnostics - User Journey</li>
+                        <li>Security Best Practices</li>
+                    </ul>
+                    <h1>Node.js core concepts</h1>
+                    <ul>
+                        <li>Introduction to Node.js</li>
+                        <li>Overview of Blocking vs Non-Blocking</li>
+                        <li>The Node.js Event Loop, Timers, and process.nextTick()</li>
+                        <li>Don't Block the Event Loop (or the Worker Pool)</li>
+                        <li>Timers in Node.js</li>
+                    </ul>
+                    <h1>Module-related guides</h1>
+                    <ul>
+                        <li>Anatomy of an HTTP Transaction</li>
+                        <li>Working with Different Filesystems</li>
+                        <li>Backpressuring in Streams</li>
+                        <li>Domain Module Postmortem</li>
+                        <li>How to publish N-API package</li>
+                        <li>ABI Stability</li>
+                    </ul>
+                    <h1>Known issues</h1>
+                    <ul><li>Native dependencies on macOS Catalina (v10.15)</li></ul>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
