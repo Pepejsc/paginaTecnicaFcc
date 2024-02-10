@@ -13,16 +13,16 @@
         <div id="nav-div">
             <nav id="navbar">
                 <header>
-                    <h1>NodeJS Documentation</h1>
+                    <h3>NodeJS Documentation</h3>
                 </header>
                 <ul id="ul-menu">
-                    <li><a class="nav-link" href="#Sobre la documentación">Sobre la documentación</a></li>
+                    <li><a class="nav-link" href="#Documentacion">Documentacion</a></li>
                     <li>
-                        <a class="nav-link" href="#v18API">v18.17.1 API LTS</a>
+                        <a class="nav-link" href="#v18API">v18API</a>
                     </li>
-                    <li><a class="nav-link" href="#v20API">v20.5.1 API</a></li>
+                    <li><a class="nav-link" href="#v20API">v20API</a></li>
                     <li>
-                        <a class="nav-link" href="#ES6">ES6 y más allá</a>
+                        <a class="nav-link" href="#ES6">ES6</a>
                     </li>
                     <li><a class="nav-link" href="#Guías">Guías</a></li>
                 </ul>
@@ -30,8 +30,8 @@
         </div>
         <div id="main">
             <main id="main-doc">
-                <section class="main-section" id="Sobre la documentación">
-                    <header>Sobre la documentación</header>
+                <section class="main-section" id="Documentacion">
+                    <header>Documentacion</header>
                     <a name="Documentation"></a>
                     <p>Existen diferentes tipos de documentación disponible en esta web:</p>
                     <ul>
@@ -68,17 +68,153 @@
                         <a>■ Other versions | ■ Options</a>
                         <ul>
                             <li>About this documentation</li>
+                            <p>
+                                Welcome to the official API reference documentation for Node.js!
+                                Node.js is a JavaScript runtime built on the V8 JavaScript engine.
+                            </p>
                             <li>Usage and example</li>
+                            <h3>Usage</h3>
+                            <code>node [options] [V8 options] [script.js | -e "script" | - ] [arguments]</code>
+                            <p>
+                                An example of a web server written with Node.js which responds with 'Hello, World!':
+                                
+                                Commands in this document start with $ or > to replicate how they would appear in a user's terminal. Do not include the
+                                $ and > characters. They are there to show the start of each command.
+                                
+                                Lines that don't start with $ or > character show the output of the previous command.
+                                
+                                First, make sure to have downloaded and installed Node.js. See Installing Node.js via package manager for further
+                                install information.
+                                
+                                Now, create an empty project folder called projects, then navigate into it.
+                            </p>
                             <hr>
                             <li>Assertion testing</li>
+                            <h3>Strict assertion mode</h3>
+                            <p>
+                                In strict assertion mode, non-strict methods behave like their corresponding strict methods. For example,
+                                assert.deepEqual() will behave like assert.deepStrictEqual().
+                                
+                                In strict assertion mode, error messages for objects display a diff. In legacy assertion mode, error messages for
+                                objects display the objects, often truncated.
+
+                                To use strict assertion mode:
+                                <code>
+                                    const assert = require('node:assert').strict;
+                                    const assert = require('node:assert/strict');
+                                </code>
+                            </p>
                             <li>C++ addons</li>
+                            <h3>C++ addons</h3>
+                            <p>
+                                Addons are dynamically-linked shared objects written in C++. The require() function can load addons as ordinary Node.js
+                                modules. Addons provide an interface between JavaScript and C/C++ libraries.
+                                
+                                There are three options for implementing addons: Node-API, nan, or direct use of internal V8, libuv, and Node.js
+                                libraries. Unless there is a need for direct access to functionality which is not exposed by Node-API, use Node-API.
+                                Refer to C/C++ addons with Node-API for more information on Node-API.
+                            </p>
                             <li>Command-line options</li>
+                            <h3>Command-line API</h3>
+                            <p>
+                                Node.js comes with a variety of CLI options. These options expose built-in debugging, multiple ways to execute scripts,
+                                and other helpful runtime options.
+                                
+                                To view this documentation as a manual page in a terminal, run <code>man node</code>.
+                            </p>
                             <li>Debugger</li>
+                            <h3>Debugger</h3>
+                            <p>
+                                Node.js includes a command-line debugging utility. The Node.js debugger client is not a full-featured debugger, but
+                                simple stepping and inspection are possible.
+                                
+                                To use it, start Node.js with the inspect argument followed by the path to the script to debug.
+                                
+                                <code>
+                                $ node inspect myscript.js
+                                Debugger listening on ws: //127.0.0.1:9229/621111f9-ffcb-4e82-b718-48a145fa5db8  
+                                For help, see: https: //nodejs.org/en/docs/inspector 
+                                connecting to 127.0.0.1:9229 ... ok 
+                                Debugger attached. 
+                                ok 
+                                Break on start in myscript.js:2 
+                                    1 // myscript.js> 
+                                    2 global.x = 5;
+                                    3 setTimeout(() => {
+                                    4 debugger;
+                                debug
+                                </code>
+                            </p>
                             <li>Domain</li>
+                            <h3>Domain</h3>
+                            <p>
+                                Source Code: lib/domain.js
+                                
+                                This module is pending deprecation. Once a replacement API has been finalized, this module will be fully deprecated.
+                                Most developers should not have cause to use this module. Users who absolutely must have the functionality that domains
+                                provide may rely on it for the time being but should expect to have to migrate to a different solution in the future.
+                                
+                                Domains provide a way to handle multiple different IO operations as a single group. If any of the event emitters or
+                                callbacks registered to a domain emit an 'error' event, or throw an error, then the domain object will be notified,
+                                rather than losing the context of the error in the process.on('uncaughtException') handler, or causing the program to
+                                exit immediately with an error code.
+                            </p>
                             <li>Globals</li>
+                            <h3>Global Objects</h3>
+                            <p>
+                                These objects are available in all modules. The following variables may appear to be global but are not. They exist only
+                                in the scope of modules, see the module system documentation:
+                                
+                                * __dirname
+                                * __filename
+                                * exports
+                                * module
+                                * require()
+
+                                The objects listed here are specific to Node.js. There are built-in objects that are part of the JavaScript language
+                                itself, which are also globally accessible.
+                            </p>
                             <li>Inspector</li>
+                            <h3>Inspector</h3>
+                            <p>
+                                Source Code: lib/inspector.js
+                                
+                                The node:inspector module provides an API for interacting with the V8 inspector.
+                                
+                                It can be accessed using:
+
+                                <code>
+                                    const inspector = require('node:inspector/promises');
+                                </code>
+                            </p>
                             <li>Modules: node:module API</li>
+                            <h3>The Module object</h3>
+                            <p>
+                                Provides general utility methods when interacting with instances of Module, the module variable often seen in CommonJS
+                                modules. Accessed via import 'node:module' or require('node:module').
+                                
+                                module.builtinModules#
+                                Added in: v9.3.0, v8.10.0, v6.13.0
+                                
+                                A list of the names of all modules provided by Node.js. Can be used to verify if a module is maintained by a third
+                                party or not.
+                                    
+                                module in this context isn't the same object that's provided by the module wrapper. To access it, require the Module
+                                module:
+
+                                <code>
+                                    // module.cjs
+                                    // In a CommonJS module
+                                    const builtin = require('node:module').builtinModules;
+                                </code>
+
+                            </p>
                             <li>Path</li>
+                            <p>
+                                The node:path module provides utilities for working with file and directory paths. It can be accessed using:
+
+                                <code>const path = require('node:path'); </code>
+                            </p>
                             <li>Punycode</li>
                         </ul>
                 </section>
